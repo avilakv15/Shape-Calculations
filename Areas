@@ -1,0 +1,76 @@
+// Calculate the area of 3 objects: Square, Circle, and Right Triangle. User inputs the corresponding number with the shape.
+// The user has the option to quit the program.
+// Kevin Avila
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+int main()
+{  
+	int object;
+
+		do 
+		{
+		cout << "\nProgram to calculate areas of objects.\n"; // Start Menu
+		cout << endl;
+		cout << setw(22) <<"1 -- Square\n";
+		cout << setw(22) <<"2 -- Circle\n";
+		cout << setw(30) <<"3 -- Right Triangle\n";
+		cout << setw(20) <<"4 -- Quit\n";
+		cout << endl;
+		cin >> object;
+
+
+			if (object == 1) // Area of a Square
+			{
+				double length, square_area;
+
+				cout << "Length of one side: ";
+				cin >> length;
+
+				square_area = pow(length, 2); // Square Area Formula
+
+				cout << "Area = " << square_area;
+				cout << endl << endl << endl;
+			}
+			else if (object == 2) // Area of a Circle
+			{
+				const double PI = 3.14159;
+				double radius, circle_area;
+
+				cout << "Radius of the circle: ";
+				cin >> radius;
+
+				circle_area = PI * pow(radius, 2); // Circle Area Formula
+
+				cout << "Area = " << circle_area;
+				cout << endl << endl << endl;
+			}
+			else if (object == 3) // Area of a Right Triangle
+			{
+				double base, height, right_area;
+
+				cout << "Base: ";
+				cin >> base;
+				cout << "Height: ";
+				cin >> height;
+
+				right_area = (base * height) / 2.0; // Right Triangle Area Formula
+
+				cout << "Area = " << right_area;
+				cout << endl << endl << endl;
+			}
+			else if (object == 4)
+			{
+				return 0; // End program
+			}
+			else
+			{
+				cout << "Invalid choice. Please try again with avilable choices." << endl;
+			}
+		} while (object >= 1 && object <= 4);
+		
+		return 0;
+}
